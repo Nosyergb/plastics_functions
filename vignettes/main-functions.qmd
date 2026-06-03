@@ -20,15 +20,24 @@ library(projectr)
 
 ```{r}
 style_gt_journal(table, title, subtitle, percent)
-# This function should apply consistent styling to gt tables used throughout the dashboard project. The styling should match the dashboard theme "journal by customizing table formatting elements to create a polished and uniform appearance across all tables.
+# Applies consistent journal-theme styling to a gt table. 
+# The function adds a title and optional subtitle, formats selected columns 
+# as percentages, applies optional color gradients, and standardizes table 
+# headers, borders, row striping, padding, and dashboard theme colors.
 ```
 
 ```{r}
 plot_country_dist(data, country, order)
-# This function should create a bar graph showing the distribution of plastic types collected within a selected country. The bars should be ordered according to the user’s selected sorting direction and styled consistently with the dashboard theme.
+# Creates a journal-themed bar chart showing the distribution of plastic 
+# types collected in a selected country. The function filters the data by 
+# country, summarizes plastic type totals, orders the bars according to the 
+# selected sorting direction, and applies consistent dashboard styling.
 ```
 
 ```{r}
-summarize_plastics(data, group_var, summary_type)
-# This function should summarize the plastics dataset by a selected grouping variable. The user should be able to choose whether the function calculates totals, proportions, or year-over-year changes, making it useful for multiple types of dashboard summaries.
+summarize_plastics(data, type)
+# Summarizes plastic type composition across years. The function calculates 
+# each plastic type’s 2020 proportion, change in proportion from the previous 
+# year, year-over-year change in total amount, or all summary measures, 
+# depending on the selected type argument.
 ```
