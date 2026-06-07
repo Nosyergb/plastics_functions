@@ -42,7 +42,7 @@ load_data()
 
 # This function has no inputs.
 
-# This function loads the merged plastics dataset from the inst folder of the package. It reads the saved plastics data file bundled with the package and returns it as a data frame for use in analyses, visualizations, and package functions.
+# This function loads the merged plastics dataset bundled with the package. The dataset is stored as Updated_Plastics.csv in the package's inst folder and is returned as a data frame for use in analyses, visualizations, and package functions.
 ```
 
 ```{r}

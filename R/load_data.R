@@ -3,11 +3,10 @@
 #' @return a data frame
 #' @export
 load_data <- function() {
-
   file_path <- system.file(
-    "plastics.rds",
+    "Updated_Plastics.csv",
     package = "projectr"
   )
 
-  readRDS(file_path)
+  read.csv(file_path)
 }
