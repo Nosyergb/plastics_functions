@@ -29,14 +29,14 @@ wrangle_plastic_types <- function(data = load_data()) {
 
   plastic_types <- c("hdpe", "ldpe", "o", "pet", "pp", "ps", "pvc")
 
-  dt <- data.table::as.data.table(
+  dt <- as.data.table(
     clean_plastics_data(
       data = data,
       remove_empty_country = FALSE
     )
   )
 
-  long_dt <- data.table::melt(
+  long_dt <- melt(
     dt,
     id.vars = "year",
     measure.vars = plastic_types,
