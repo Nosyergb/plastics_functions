@@ -20,7 +20,7 @@ library(projectr)
 
 ```{r}
 animate_country_plastics(data, country_name, colors, nframes, fps)
-# Example: animate_country_plastics(data = load_data(), country_name = "China", colors = c("#FDECEC", "#F8D6D6", "#F1ADAD", "#EA8585", "#E35C5C", "#DE4C4C", "#D95C5C"), nframes = 80, fps = 10)
+# Example: animate_country_plastics(data = load_data(), country_name = "China", colors = c("lightblue", "lightyellow", "lightgreen", "orange", "pink", "purple", "gray"), nframes = 80, fps = 10)
 
 # data = plastics dataset; country_name = country as a string; colors = 7 colors; nframes = number of frames; fps = frames per second.
 
