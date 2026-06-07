@@ -19,31 +19,41 @@ library(projectr)
 ```
 
 ```{r}
-style_gt_journal(table, title, subtitle, percent, color_col)
-# Applies consistent journal-theme styling to a gt table. 
-# The function adds a required title and optional subtitle, formats selected 
-# percent columns, applies optional color gradients to selected columns, and 
-# standardizes headers, borders, row striping, padding, and theme colors.
+animate_country_plastics(data, country_name, colors, nframes, fps)
+# This function creates an animated bar chart showing the composition of plastic types over time for a selected country. It cleans the plastics data, validates the selected country, reshapes the plastic type columns, and returns a gganimate animation object showing yearly changes in plastic composition.
 ```
 
 ```{r}
-plot_plastic_country_covid(
-  data, 
-  label_n, 
-  label_largest_increase, 
-  point_color, 
-  point_size, 
-  point_alpha
-)
-# Creates a scatterplot comparing plastic waste totals by country before 
-# and during COVID. The function labels either the countries with the largest 
-# increases from 2019 to 2020 or the countries with the largest 2020 totals, 
-# with user-controlled label count, point color, point size, and transparency.
+compare_country_plastic_types(data, country_one, country_two)
+# This function performs a chi-square test of independence to determine whether the distribution of plastic types differs between two selected countries. The data are cleaned by removing Grand Total rows and EMPTY country values, the country names are validated, and plastic type counts are aggregated before conducting the statistical test. The function returns a chi-square test object containing the test statistic, degrees of freedom, and p-value.
 ```
 
 ```{r}
-summarize_plastics(data, type)
-# Summarizes plastic type composition changes from 2019 to 2020. 
-# The function uses the selected type argument to return changes in 
-# proportions, year-over-year changes in totals, or both summary measures.
+load_data()
+# This function loads the Break Free From Plastic dataset from the TidyTuesday project using the tidytuesdayR package. It retrieves the plastics dataset from the January 26, 2021 release and returns it as a data frame for use in analyses, visualizations, and package functions.
+```
+
+```{r}
+plot_country_dist(data, label_n, label_largest_increase, point_color, point_size, point_alpha)
+# This function creates a scatterplot comparing each country's total plastic waste in 2019 and 2020. It cleans the data, summarizes total plastic waste by country and year, reshapes the data so 2019 and 2020 totals can be compared, and labels selected countries either by largest 2020 totals or largest increase from 2019 to 2020.
+```
+
+```{r}
+style_gt_journal(table, title, subtitle, percent_cols, color_cols)
+# This function applies consistent journal-style formatting to gt tables used throughout the dashboard project. It adds a title and optional subtitle, formats selected columns as percentages, optionally applies color gradients to selected columns, and customizes table styling to create a polished and uniform appearance across all tables.
+```
+
+```{r}
+summarize_country_totals(data)
+# This function calculates the total amount of plastic waste reported for each country in the dataset. It removes Grand Total rows and EMPTY country values, groups observations by country, sums the grand_total values, and returns a tibble sorted in descending order of total plastic waste.
+```
+
+```{r}
+summarize_plastics_prop(data, type)
+# This function summarizes changes in plastic type composition between 2019 and 2020. It calculates the proportion of each plastic type, the change in proportion from the previous year, and the year-over-year change in total amount. Depending on the value of type, the function returns proportional changes ("prop"), year-over-year changes ("yoy"), or both measures in a single tibble.
+```
+
+```{r}
+wrangle_plastic_types(data)
+# This function uses data.table to convert the plastics data from wide to long format and summarize the total amount of each plastic type by year. It removes Grand Total rows, calculates yearly totals for each plastic type, and computes the proportion that each plastic type contributes to the total plastic waste reported in a given year.
 ```

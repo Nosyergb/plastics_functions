@@ -10,10 +10,10 @@ wrangle_plastic_types(data = load_data())
 \item{data}{Plastics dataset.}
 }
 \value{
-A tibble with year, plastic_type, total, and proportion columns.
+A data.table with year, plastic_type, total, and proportion columns.
 }
 \description{
-Converts the plastics data from wide to long format and summarizes the
-total amount and proportion of each plastic type by year.
+Converts the plastics data from wide to long format using data.table and
+summarizes the total amount and proportion of each plastic type by year.
 Grand Total rows are removed before summarizing.
 }
