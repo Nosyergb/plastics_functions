@@ -1,7 +1,7 @@
-test_that("wrangle_plastic_types returns a tibble", {
+test_that("wrangle_plastic_types returns a data.table", {
   result <- wrangle_plastic_types()
 
-  expect_true(is.data.frame(result))
+  expect_s3_class(result, "data.table")
 })
 
 test_that("wrangle_plastic_types returns expected columns", {
